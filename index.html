@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link type="text/css" href="assets/stylesheet/main.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <div id="app">
+    <div v-html="message"></div>
+      <h3>{{name}}</h3>
+      <ul>
+          <li class="nav" v-for="item in list">{{item}}
+            <button  v-on:click="deleteItem(item)">-</button>
+          </li>
+          <li v-if="newItem">{{newItem}}</li>
+          <input v-model="newItem">
+          <button @click="addNew"> ADD </button>
+      </ul>
+      <div>{{counter}} <button v-on:click="counter++"> ADD Number</button></div>
+    </div>
+
+    <!-- Script -->
+    <script type="text/javascript" src="assets/js/vue.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+  </body>
+</html>
